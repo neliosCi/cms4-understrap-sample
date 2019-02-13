@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<span class="learn-more-icon">
 
-						<?php get_template_part( 'svg/arrow/arrow-right-01.svg' ); ?>
+						<?php get_template_part( 'svg/arrow-right-01.svg' ); ?>
 
 					</span>
 
