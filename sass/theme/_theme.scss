@@ -1,0 +1,362 @@
+.font-italic {
+	font-family: $font-family-georgia-italic;
+}
+.font-weight-light {
+	font-family: $font-family-gill-sans-light;
+}
+
+.dropdown-item,
+.btn,
+.nav-link,
+.nav-anchor {
+	font-family: $headings-font-family;
+}
+
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+	color: $body-color;
+}
+
+.form-control,
+.btn {
+	font-size: $font-size-sm;
+}
+
+svg {
+	.ar-svg .logo & {
+		height: 33vw;
+		max-height: #{$logo-height};
+		@include transition($transition-base);
+	}
+	.menu-header .close &,
+	.mobile-pin-icon &,
+	.mobile-tel-icon &,
+	.nav-list-icon &,
+	.navbar-phone-icon & {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+
+	.learn-more-icon & {
+		height: .875rem;
+		width: .875rem;
+	}
+	.room-floorplan-icon &,
+	.social-icon & {
+		height: 1.125rem;
+		width: 1.125rem;
+	}
+	.navbar-open-icon & {
+		width: 2 * 1.125rem;
+		height: 1.125rem;
+	}
+}
+
+
+
+body {
+	&.home {
+		.home-book-direct {
+			background-size: cover;
+		}
+	}
+	&.scrolled {
+		#wrapper-navbar {
+			.navbar {
+				.logo {
+					svg {
+						max-height: calc(#{$logo-height} - 3rem);
+
+					}
+					img {
+						max-height: 50px;
+					}
+				}
+			}
+
+		}
+	}
+	&:not(.scrolled) {
+		.navbar {
+			min-height: 10rem;
+			@include transition($transition-base);
+			background-color: inherit !important;
+			.navbar-center {
+				top: 4rem;
+			}
+		}
+	}
+}
+
+
+
+
+.navbar-toggler {
+	svg {
+		@extend .translate-center;
+		#hamburger-01 {
+			display: block;
+		}
+
+		#hamburger-01-hover {
+			display: none;
+		}
+	}
+	&:hover {
+		svg {
+			#hamburger-01 {
+				display: none;
+			}
+			#hamburger-01-hover {
+				display: block;
+			}
+		}
+
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.sidebar {
+		.main-menu {
+			.nav-link {
+				font-size: $font-size-base * 1.5;
+			}
+		}
+	}
+
+	.home-any {
+		.card {
+			.card-body,
+			.card-img-overlay {
+				padding: 0;
+				position: relative;
+			}
+		}
+	}
+	.home-rooms {
+		.card {
+			.card-img-overlay {
+
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	svg {
+		.logo & {
+			max-height: calc(#{$logo-height} - 4rem);
+			padding-top: .75rem;
+		}
+	}
+	body {
+		&.scrolled {
+			.logo {
+				#logo-text {
+					display: none;
+				}
+			}
+		}
+		#wrapper-navbar {
+			.navbar {
+				.navbar-language-switcher {
+					//padding: $nav-link-padding-y $nav-link-padding-x;
+				}
+				.navbar-toggler {
+					font-size: $font-size-sm;
+				}
+			}
+		}
+		&.home {
+			.home-pages {
+				.card-link {
+					bottom: 2rem;
+				}
+			}
+			.home-any,
+			.home-rooms {
+				.card-title {
+					h3 {
+						font-size: 1rem;
+						font-family: $font-family-gill-sans;
+					}
+
+				}
+			}
+		}
+	}
+
+}
+
+@include media-breakpoint-up(lg) {
+
+	body {
+		#wrapper-navbar {
+			.navbar {
+				.navbar-phone-icon,
+				.navbar-language-switcher {
+					//width: 3rem;
+				}
+			}
+		}
+
+		&:not(.scrolled) {
+			.navbar {
+				.navbar-center {
+					top: 4rem;
+				}
+			}
+		}
+		&.scrolled {
+			.navbar {
+				min-height: 7rem;
+
+			}
+		}
+		&.home {
+			.home-book-direct {
+				background-size: cover;
+				.book-direct-title {
+					position: absolute;
+					right: 0;
+					top: 50%;
+					-webkit-transform: translate(5rem, 50%) rotate(90deg);
+					-moz-transform: translate(5rem, 50%) rotate(90deg);
+					-ms-transform: translate(5rem, 50%) rotate(90deg);
+					-o-transform: translate(5rem, 50%) rotate(90deg);
+					transform: translate(5rem, 50%) rotate(90deg);
+				}
+			}
+			.home-welcome {
+				.entry-content {
+					font-size: $font-size-lg;
+				}
+			}
+			.home-pages-wrapper {
+				.card-link {
+					bottom: 6.875rem;
+				}
+			}
+			.home-rooms {
+				.home-rooms-title,
+				.home-offers-title {
+					font-size: 3.125rem;
+					-webkit-transform: translateX(-4.5rem);
+					-moz-transform: translateX(-4.5rem);
+					-ms-transform: translateX(-4.5rem);
+					-o-transform: translateX(-4.5rem);
+					transform: translateX(-4.5rem);
+				}
+			}
+			.home-any {
+				.card {
+					&::after {
+						background: linear-gradient(to left, $body-bg, transparent);
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+					}
+					.card-img {
+						max-width: 70%;
+
+					}
+					.card-img-overlay {
+						max-width: 50%;
+						left: initial;
+						z-index: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.card-prev,
+	.card-next {
+		min-width: 8rem;
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+		text-decoration: none !important;
+		overflow: hidden;
+		z-index: $zindex-dropdown;
+		font-family: $font-family-georgia-italic;
+		font-size: $font-size-base * 1.0625;
+		&::after {
+			content: '';
+			border-bottom: 1px solid $primary;
+			display: block;
+			position: absolute;
+			right: 0;
+			bottom: 1px;
+			width: 100%;
+			-webkit-transition: transform .3s;
+			-moz-transition: transform .3s;
+			-o-transition: transform .3s;
+			transition: transform .3s;
+		}
+		&:hover {
+			color: $primary;
+			&::after {
+				-webkit-transform: translateX(0);
+				-moz-transform: translateX(0);
+				-ms-transform: translateX(0);
+				-o-transform: translateX(0);
+				transform: translateX(0);
+			}
+		}
+	}
+	.card-prev {
+		left: -6rem;
+		text-align: left;
+		padding-right: 4rem;
+		padding-left: 0;
+		&::after {
+			-webkit-transform: translateX(-100%);
+			-moz-transform: translateX(-100%);
+			-ms-transform: translateX(-100%);
+			-o-transform: translateX(-100%);
+			transform: translateX(-100%);
+		}
+	}
+	.card-next {
+		padding-right: 0;
+		padding-left: 4rem;
+		right: -6rem;
+		text-align: right;
+		&::after {
+			-webkit-transform: translateX(100%);
+			-moz-transform: translateX(100%);
+			-ms-transform: translateX(100%);
+			-o-transform: translateX(100%);
+			transform: translateX(100%);
+		}
+	}
+	.card-link {
+		text-decoration: none;
+		max-width: 3rem;
+		.learn-more-text {
+			width: 0;
+			overflow: hidden;
+			color: $primary;
+			#home-pages & {
+				color: $white;
+			}
+		}
+		&:hover {
+			max-width: 100%;
+			.learn-more-text {
+				margin-left: .5rem;
+				margin-right: .5rem;
+				width: 100%;
+			}
+		}
+	}
+}
