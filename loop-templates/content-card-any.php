@@ -2,7 +2,7 @@
 /**
  * Post rendering content according to caller of get_template_part.
  *
- * @package hotel-cube-03
+ * @package nelios
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
